@@ -6,20 +6,20 @@ class character{
     }
 } 
 const TALENT_BOOK_INFO = [
-    ["Prosperity", "Mondays/Thursdays"],//0
-    ["Freedom", "Mondays/Thursdays"],//1
-    ["Transience", "Mondays/Thursdays"],//2
-    ["Admonition", "Mondays/Thursdays"],//3
+    ["Prosperity", "Mondays/Thursdays"],    //0
+    ["Freedom", "Mondays/Thursdays"],       //1
+    ["Transience", "Mondays/Thursdays"],    //2
+    ["Admonition", "Mondays/Thursdays"],    //3
 
-    ["Diligence", "Tuesdays/Fridays"],//4
-    ["Resistance", "Tuesdays/Fridays"],//5
-    ["Elegance", "Tuesdays/Fridays"],//6
-    ["Ingenuity", "Tuesdays/Fridays"],//7
+    ["Diligence", "Tuesdays/Fridays"],      //4
+    ["Resistance", "Tuesdays/Fridays"],     //5
+    ["Elegance", "Tuesdays/Fridays"],       //6
+    ["Ingenuity", "Tuesdays/Fridays"],      //7
 
-    ["Ballad", "Wednesdays/Saturdays"], //8
-    ["Gold", "Wednesdays/Saturdays"], //9
-    ["Light", "Wednesdays/Saturdays"], //10
-    ["Praxis", "Wednesdays/Saturdays"] //11
+    ["Ballad", "Wednesdays/Saturdays"],     //8
+    ["Gold", "Wednesdays/Saturdays"],       //9
+    ["Light", "Wednesdays/Saturdays"],      //10
+    ["Praxis", "Wednesdays/Saturdays"]      //11
 ];
 
 const BOSS_MATERIAL_INFO = [
@@ -58,6 +58,7 @@ const YANFEI = new character("Yanfei", BOSS_MATERIAL_INFO[16], TALENT_BOOK_INFO[
 const XINYAN = new character("Xinyan", BOSS_MATERIAL_INFO[18], TALENT_BOOK_INFO[9]);
 const BENNETT = new character("Bennett", BOSS_MATERIAL_INFO[18], TALENT_BOOK_INFO[5]);
 const AMBER = new character("Amber", BOSS_MATERIAL_INFO[18], TALENT_BOOK_INFO[1])
+const DEHYA = new character("Dehya", BOSS_MATERIAL_INFO[1], TALENT_BOOK_INFO[11])
 
 //HYDRO CHARACTERS
 const NILOU = new character("Nilou", BOSS_MATERIAL_INFO[0], TALENT_BOOK_INFO[11]);
