@@ -39,7 +39,7 @@ function resinForBossMat(level, toLevel) {
     return bossRuns;
 }
 
-function resinForTalents(talentLevels, xinqiuBonus, condensed) {
+function resinForTalents(talentLevels, booksInventory, xinqiuBonus, condensed) {
     const TALENT_BOOKS_BASE_VALUES = [3, 6, 12, 18, 27, 36, 54, 108, 144];
     const TALENT_BOOKS = [3, 2, 4, 6, 9, 4, 6, 12, 16];
     let talentBooksNeeded = {
@@ -90,18 +90,20 @@ function resinForTalents(talentLevels, xinqiuBonus, condensed) {
             }
         }
     }
+    let bookValueInventory = booksInventory[0] + (booksInventory[1] * 3) + (booksInventory[2] * 9);
+    bookValueNeeded -= bookValueInventory;
 
-      domainRuns.min = Math.ceil(bookValueNeeded / 39);
-      domainRuns.minResinNeeded = domainRuns.min * 20;
-      domainRuns.minDays = parseFloat((domainRuns.minResinNeeded / 180).toFixed(2));
+    domainRuns.min = Math.ceil(bookValueNeeded / 39);
+    domainRuns.minResinNeeded = domainRuns.min * 20;
+    domainRuns.minDays = parseFloat((domainRuns.minResinNeeded / 180).toFixed(2));
 
-      domainRuns.max = Math.ceil(bookValueNeeded / 8);
-      domainRuns.maxResinNeeded = domainRuns.max * 20;
-      domainRuns.maxDays = parseFloat((domainRuns.maxResinNeeded / 180).toFixed(2));
+    domainRuns.max = Math.ceil(bookValueNeeded / 8);
+    domainRuns.maxResinNeeded = domainRuns.max * 20;
+    domainRuns.maxDays = parseFloat((domainRuns.maxResinNeeded / 180).toFixed(2));
 
-      domainRuns.avg = Math.ceil(bookValueNeeded / 10.18);
-      domainRuns.avgResinNeeded = domainRuns.avg * 20;
-      domainRuns.avgDays = parseFloat((domainRuns.avgResinNeeded / 180).toFixed(2));
+    domainRuns.avg = Math.ceil(bookValueNeeded / 10.18);
+    domainRuns.avgResinNeeded = domainRuns.avg * 20;
+    domainRuns.avgDays = parseFloat((domainRuns.avgResinNeeded / 180).toFixed(2));
     
     if (condensed) {
         domainRuns.min = Math.ceil(bookValueNeeded / 39 / 2);
@@ -141,4 +143,4 @@ function resinForTalents(talentLevels, xinqiuBonus, condensed) {
     return [bookValueNeeded, weeklyBossMatsNeeded, talentBooksNeeded, weeklyBossRuns, domainRuns];
 }
 
-console.log(resinForTalents([[1, 8], [1, 7], [1, 1]], false, true));
+console.log(resinForTalents([[1, 8], [1, 7], [1, 1]], [0,0,0], false, true));
