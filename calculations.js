@@ -94,19 +94,26 @@ function resinForTalents(talentLevels, booksInventory, xinqiuBonus, condensed) {
     bookValueNeeded -= bookValueInventory;
 
     domainRuns.min = Math.ceil(bookValueNeeded / 39);
+    domainRuns.max = Math.ceil(bookValueNeeded / 8);
+    domainRuns.avg = Math.ceil(bookValueNeeded / 10.18);
+    
+    if (xinqiuBonus) {
+        domainRuns.min = Math.ceil((bookValueNeeded - (domainRuns.min * 2)) / 39);
+        domainRuns.max = Math.ceil((bookValueNeeded - (domainRuns.min * 2)) / 8);
+        domainRuns.avg = Math.ceil((bookValueNeeded - (domainRuns.min * 2)) / 10.18);
+    }
+
     domainRuns.minResinNeeded = domainRuns.min * 20;
     domainRuns.minDays = parseFloat((domainRuns.minResinNeeded / 180).toFixed(2));
 
-    domainRuns.max = Math.ceil(bookValueNeeded / 8);
+    domainRuns.avgResinNeeded = domainRuns.avg * 20;
+    domainRuns.avgDays = parseFloat((domainRuns.avgResinNeeded / 180).toFixed(2));
+
     domainRuns.maxResinNeeded = domainRuns.max * 20;
     domainRuns.maxDays = parseFloat((domainRuns.maxResinNeeded / 180).toFixed(2));
 
-    domainRuns.avg = Math.ceil(bookValueNeeded / 10.18);
-    domainRuns.avgResinNeeded = domainRuns.avg * 20;
-    domainRuns.avgDays = parseFloat((domainRuns.avgResinNeeded / 180).toFixed(2));
-    
     if (condensed) {
-        domainRuns.min = Math.ceil(bookValueNeeded / 39 / 2);
+        domainRuns.min = Math.ceil(domainRuns.min/2);
         if (domainRuns.minResinNeeded % 40 == 0) {
             domainRuns.minOriginalResinRun = false;
         }
@@ -114,7 +121,7 @@ function resinForTalents(talentLevels, booksInventory, xinqiuBonus, condensed) {
             domainRuns.minOriginalResinRun = true;
         }
 
-        domainRuns.max = Math.ceil(bookValueNeeded / 8 / 2);
+        domainRuns.max = Math.ceil(domainRuns.max/2);
         if (domainRuns.maxResinNeeded % 40 == 0) {
             domainRuns.maxOriginalResinRun = false;
         }
@@ -122,7 +129,7 @@ function resinForTalents(talentLevels, booksInventory, xinqiuBonus, condensed) {
             domainRuns.maxOriginalResinRun = true;
         }
 
-        domainRuns.avg = Math.ceil(bookValueNeeded / 10.18 / 2);
+        domainRuns.avg = Math.ceil(domainRuns.avg/2);
         if (domainRuns.avgResinNeeded % 40 == 0) {
             domainRuns.avgOriginalResinRun = false;
         }
@@ -143,4 +150,4 @@ function resinForTalents(talentLevels, booksInventory, xinqiuBonus, condensed) {
     return [bookValueNeeded, weeklyBossMatsNeeded, talentBooksNeeded, weeklyBossRuns, domainRuns];
 }
 
-console.log(resinForTalents([[1, 8], [1, 7], [1, 1]], [0,0,0], false, true));
+console.log(resinForTalents([[8, 9], [5, 5], [1, 1]], [0,0,0], true, true));
