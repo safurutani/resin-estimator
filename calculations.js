@@ -1,4 +1,4 @@
-function resinForBossMat(level, toLevel) {
+function resinForBossMat(level, toLevel, matInventory) {
     const ASCENSION_LEVELS = [40, 50, 60, 70, 80];
     const CHARACTER_ASCENSION_BOSS_MATERIALS = [2,  4,  8,  12, 20];
     let bossRuns = {
@@ -15,7 +15,7 @@ function resinForBossMat(level, toLevel) {
         avgDays:0
     }  
 
-    let materialsNeeded = 0;
+    let materialsNeeded = -matInventory;
 
     for (let i in ASCENSION_LEVELS) {
         //assumes you have not ascended at current level 
@@ -36,7 +36,7 @@ function resinForBossMat(level, toLevel) {
     bossRuns.avgResinNeeded = bossRuns.avg * 40;
     bossRuns.avgDays = parseFloat((bossRuns.avgResinNeeded / 180).toFixed(2));
 
-    return bossRuns;
+    return [bossRuns, materialsNeeded];
 }
 
 function resinForTalents(talentLevels, booksInventory, xinqiuBonus, condensed) {
@@ -150,4 +150,3 @@ function resinForTalents(talentLevels, booksInventory, xinqiuBonus, condensed) {
     return [bookValueNeeded, weeklyBossMatsNeeded, talentBooksNeeded, weeklyBossRuns, domainRuns];
 }
 
-console.log(resinForTalents([[8, 9], [5, 5], [1, 1]], [0,0,0], true, true));
