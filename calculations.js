@@ -213,7 +213,7 @@ function showContent() {
       levelTalents.weeklyBossRuns.weeklyBossMatsNeeded;
     document.getElementById("weeklyBossRuns").innerHTML =
       "Min: " +
-      levelTalents.weeklyBossRuns.min +
+      levelTalents.weeklyBossRuns.min + 
       "<br>Avg: " +
       levelTalents.weeklyBossRuns.avg +
       "<br> Max: " +
@@ -232,7 +232,13 @@ function showContent() {
       levelTalents.domainRuns.avgResinNeeded +
       "<br> Max: " +
       levelTalents.domainRuns.maxResinNeeded;
-    
+    document.getElementById("daysTalents").innerHTML =
+      "Min: " +
+      levelTalents.domainRuns.minDays +
+      "<br>Avg: " +
+      levelTalents.domainRuns.avgDays +
+      "<br> Max: " +
+      levelTalents.domainRuns.maxDays;
   }
   
   function displayBossInfo() {
