@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resin Estimator for Talent Books and Boss Drops</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran&display=swap" rel="stylesheet">
+  </head>
+  <body onload="javascript:initialDisplay();">
+    <h1>Resin Estimator</h1>
+    <h2>Talent Books, Talent Level Up Materials, Boss Materials</h2>
+    <br>
+  
+    <div class="selection">
+      <p class="first-line">Character sort</p>
+      <div class="buttons">
+        <label><input value="alphabetical" name="sort_method" id="sort_alphabet" type="radio" onclick="javascript:showContent();" checked="checked">Alphabetical</label>
+        <label><input value="pyro" name="sort_method" id="sort_pyro" type="radio" onclick="javascript:showContent();">Pyro</label>
+        <label><input value="hydro" name="sort_method" id="sort_hydro" type="radio" onclick="javascript:showContent();">Hydro </label>
+        <label><input value="anemo" name="sort_method" id="sort_anemo" type="radio" onclick="javascript:showContent();">Anemo</label>
+        <label><input value="electro" name="sort_method" id="sort_electro" type="radio" onclick="javascript:showContent();">Electro </label>
+        <label><input value="dendro" name="sort_method" id="sort_dendro" type="radio" onclick="javascript:showContent();">Dendro </label>
+        <label><input value="cryo" name="sort_method" id="sort_cryo" type="radio" onclick="javascript:showContent();">Cryo </label>
+        <label><input value="geo" name="sort_method" id="sort_geo" type="radio" onclick="javascript:showContent();">Geo </label>
+      </div>
+      <div id="dropdowns">
+        <div id="alphabetical" class="select">
+          <label>Select a character:</label>
+          <select class="dropdowns">
+            <option value="1">Albedo</option>
+            <option value="2">Alhaitham</option>
+            <option value="3">Aloy</option>
+            <option value="4">Amber</option>
+            <option value="5">Arataki Itto</option>
+            <option value="6">Barbara</option>
+            <option value="7">Beidou</option>
+            <option value="8">Bennett</option>
+            <option value="9">Candace</option>
+            <option value="10">Chongyun</option>
+            <option value="11">Collei</option>
+            <option value="12">Cyno</option>
+            <option value="13">Dehya</option>
+            <option value="14">Diluc</option>
+            <option value="15">Diona</option>
+            <option value="16">Dori</option>
+            <option value="17">Eula</option>
+            <option value="18">Faruzan</option>
+            <option value="19">Fischl</option>
+            <option value="20">Ganyu</option>
+            <option value="21">Gorou</option>
+            <option value="22">Hu Tao</option>
+            <option value="23">Jean</option>
+            <option value="24">Kaedehara Kazuha</option>
+            <option value="25">Kaeya</option>
+            <option value="26">Kamisato Ayaka</option>
+            <option value="27">Kamisato Ayato</option>
+            <option value="28">Keqing</option>
+            <option value="29">Klee</option>
+            <option value="30">Kujou Sara</option>
+            <option value="31">Kuki Shinobu</option>
+            <option value="32">Layla</option>
+            <option value="33">Lisa</option>
+            <option value="34">Mona</option>
+            <option value="35">Nahida</option>
+            <option value="36">Nilou</option>
+            <option value="37">Ningguang</option>
+            <option value="38">Noelle</option>
+            <option value="39">Qiqi</option>
+            <option value="40">Raiden Shogun</option>
+            <option value="41">Razor</option>
+            <option value="42">Rosaria</option>
+            <option value="43">Sangonomiya Kokomi</option>
+            <option value="44">Sayu</option>
+            <option value="45">Shenhe</option>
+            <option value="46">Shikanoin Heizou</option>
+            <option value="47">Sucrose</option>
+            <option value="48">Tartaglia</option>
+            <option value="49">Thoma</option>
+            <option value="50">Tighnari</option>
+            <option value="51">Traveler (Anemo)</option>
+            <option value="51">Traveler (Geo)</option>
+            <option value="51">Traveler (Electro)</option>
+            <option value="51">Traveler (Dendro)</option>
+            <option value="52">Venti</option>
+            <option value="53">Wanderer</option>
+            <option value="54">Xiangling</option>
+            <option value="55">Xiao</option>
+            <option value="56">Xingqiu</option>
+            <option value="57">Xinyan</option>
+            <option value="58">Yae Miko</option>
+            <option value="59">Yanfei</option>
+            <option value="60">Yaoyao</option>
+            <option value="61">Yelan</option>
+            <option value="62">Yoimiya</option>
+            <option value="63">Yun Jin</option>
+            <option value="64">Zhongli</option>
+          </select>
+        </div>
+        <div id="pyro" class="select">
+          <label>Select a character:</label>
+          <select class="dropdowns">
+            <option value="4">Amber</option>
+            <option value="8">Bennett</option>
+            <option value="13">Dehya</option>
+            <option value="14">Diluc</option>
+            <option value="22">Hu Tao</option>
+            <option value="29">Klee</option>
+            <option value="49">Thoma</option>
+            <option value="54">Xiangling</option>
+            <option value="57">Xinyan</option>
+            <option value="59">Yanfei</option>
+            <option value="62">Yoimiya</option>
+          </select>
+        </div>
+        <div id="hydro" class="select">
+          <label>Select a character:</label>
+          <select class="dropdowns">
+            <option value="6">Barbara</option>
+            <option value="9">Candace</option>
+            <option value="27">Kamisato Ayato</option>
+            <option value="34">Mona</option>
+            <option value="36">Nilou</option>
+            <option value="43">Sangonomiya Kokomi</option>
+            <option value="48">Tartaglia</option>
+            <option value="56">Xingqiu</option>
+            <option value="61">Yelan</option>
+          </select>
+        </div>
+        <div id="anemo" class="select">
+          <label>Select a character:</label>
+          <select class="dropdowns">
+            <option value="18">Faruzan</option>
+            <option value="23">Jean</option>
+            <option value="24">Kaedehara Kazuha</option>
+            <option value="44">Sayu</option>
+            <option value="46">Shikanoin Heizou</option>
+            <option value="47">Sucrose</option>
+            <option value="51">Traveler (Anemo)</option>
+            <option value="52">Venti</option>
+            <option value="53">Wanderer</option>
+            <option value="55">Xiao</option>
+          </select>
+        </div>
+        <div id="electro" class="select">
+          <label>Select a character:</label>
+          <select class="dropdowns">
+            <option value="7">Beidou</option>
+            <option value="12">Cyno</option>
+            <option value="16">Dori</option>
+            <option value="19">Fischl</option>
+            <option value="28">Keqing</option>
+            <option value="30">Kujou Sara</option>
+            <option value="31">Kuki Shinobu</option>
+            <option value="33">Lisa</option>
+            <option value="40">Raiden Shogun</option>
+            <option value="41">Razor</option>
+            <option value="51">Traveler (Electro)</option>
+            <option value="58">Yae Miko</option>
+          </select>
+        </div>
+        <div id="dendro" class="select">
+          <label>Select a character:</label>
+          <select class="dropdowns">
+            <option value="2">Alhaitham</option>
+            <option value="11">Collei</option>
+            <option value="35">Nahida</option>
+            <option value="50">Tighnari</option>
+            <option value="51">Traveler (Dendro)</option>
+            <option value="60">Yaoyao</option>
+          </select>
+        </div>
+        <div id="cryo" class="select">
+          <label>Select a character:</label>
+          <select class="dropdowns">
+            <option value="3">Aloy</option>
+            <option value="10">Chongyun</option>
+            <option value="15">Diona</option>
+            <option value="17">Eula</option>
+            <option value="20">Ganyu</option>
+            <option value="25">Kaeya</option>
+            <option value="26">Kamisato Ayaka</option>
+            <option value="32">Layla</option>
+            <option value="39">Qiqi</option>
+            <option value="42">Rosaria</option>
+            <option value="45">Shenhe</option>
+          </select>
+        </div>
+        <div id="geo" class="select">
+          <label>Select a character:</label>
+          <select class="dropdowns">
+            <option value="1">Albedo</option>
+            <option value="5">Arataki Itto</option>
+            <option value="21">Gorou</option>
+            <option value="37">Ningguang</option>
+            <option value="38">Noelle</option>
+            <option value="51">Traveler (Geo)</option>
+            <option value="63">Yun Jin</option>
+            <option value="64">Zhongli</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div id="talent_input">
+      <div class="column">
+        <h3>Talent Leveling</h3>
+        <label class="number-label">Normal Attack: &nbsp;<input id="currentNa" class="info" name="currentNa" value="1" required type="number" min="1" max="10"></label>
+        <label id="number-label">=&gt; <input id="desiredNa" name="desiredNa" class="info" value="10" required type="number" min="1" max="10"></label>
+        <br>
+        <label class="number-label">Skill:&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;<input id="currentSkill" name="currentSkill" class="info" value="1" required type="number" min="1" max="10"></label>
+        <label class="number-label">=&gt; <input id="desiredSkill" name="desiredSkill" class="info" value="10" required type="number" min="1" max="10"></label>
+        <br>
+        <label class="number-label">Burst:&emsp;&emsp;&emsp;&emsp;&nbsp;<input id="currentBurst" name="currentBurst" class="info" value="1" required type="number" min="1" max="10"></label>
+        <label class="number-label">=&gt; <input id="desiredBurst" name="desiredBurst" class="info" value="10" required type="number" min="1" max="10"></label>
+        <div id="talent_parameters">
+          <br>
+          <p class="mini_header">Talent Books In Inventory</p>
+          <label class="number-label">Green: <input id="greenBooks" name="greenBooks" class="bookInventory" value="0" required type="number" min="0" max="999"></label>
+          <label class="number-label"> &nbsp;Blue: <input id="blueBooks" name="blueBooks" class="bookInventory" value="0" required type="number" min="0" max="999"></label>
+          <label class="number-label"> &nbsp;Purple: <input id="purpleBooks" name="purpleBooks" class="bookInventory" value="0" required type="number" min="0" max="999"></label>
+          <br>
+          <br>
+          <br>
+          <label title="Xingqiu gives a 25% chance to return 1 talent book when crafting">Xingqiu crafting bonus* </label><label class="switch">
+            <input type="checkbox" id="xingqiuBonus">
+            <span class="slider round"></span>
+          </label>
+          <br>
+          <p>Use Condensed Resin &ensp;<label class="switch">
+              <input id="condensedResin" type="checkbox">
+              <span class="slider round"></span>
+            </label></p>
+          <button id="calculate_talents" onclick="javascript:displayTalentInfo();">Calculate Resin</button>
+        </div>
+      </div>
+      <div class="column results">
+        <h3>Materials Needed</h3>
+        <p id="matsNeeded">Green Books: <br>Blue Books: <br>Purple Books: <br><br>Weekly Boss Drops: </p>
+        <h3>Weekly Boss Runs</h3>
+        <p id="weeklyBossRuns">Min: <br>Avg: <br> Max: </p>
+      </div>
+      <div class="column results">
+        <h3>Talent Domain Runs</h3>
+        <p id="domainRuns">Min: <br>Avg: <br> Max: </p>
+        <h3>Resin Needed</h3>
+        <p id="domainResin">Min: <br>Avg: <br> Max: </p>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+  
+    <div id="ascension">
+  
+      <div class="column">
+        <h3>Character Ascension</h3>
+        <label class="number-label">Current Level: <input id="currentLvl" name="currentLvl" class="info" value="1" required type="number" min="1" max="90"></label>
+        <label class="number-label" title="Assumes you have not ascended at the current level and will not ascend at desired level">=&gt; Desired Level*: <input id="desiredLvl" name="desiredLvl" class="info" value="90" required type="number" min="1" max="90"></label>
+        <br>
+        <br>
+        <label class="number-label">Boss Materials In Inventory: <input id="invBossMats" name="invBossMats" class="bookInventory" value="0" required type="number" min="0" max="999"></label>
+        <br>
+        <button id="calculate_ascension" onclick="javascript:displayBossInfo();">Calculate Resin</button>
+      </div>
+      <div class="column results">
+        <h3>Boss Materials Needed</h3>
+        <p>Boss Drops: <span id="boss-drops"></span></p>
+        <br>
+  
+      </div>
+      <div class="column results">
+        <h3>Boss Runs</h3>
+        <p id="bossRuns">Min: <br>Avg: <br> Max: </p>
+        <h3>Resin Needed</h3>
+        <p id="bossResin">Min: <br>Avg: <br> Max: </p>
+      </div>
+      <br>
+      <br>
+  
+    </div>
+    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="calculations.js"></script>
+    <script type="text/javascript" src="characters.js"></script>
+  </body>
+</html>
