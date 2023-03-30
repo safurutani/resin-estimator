@@ -10,6 +10,11 @@ h3,
 .mini_header {
   text-decoration-line: underline;
 }
+h3 span, .mini_header span {
+  background: #0e6655;
+  padding: 8px;
+  border-radius: 8px;
+}
 body {
   width: 100%;
   height: 100vh;
