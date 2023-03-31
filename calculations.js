@@ -202,42 +202,37 @@ function showContent() {
     var condensedResin = document.getElementById("condensedResin").checked;
     let levelTalents = resinForTalents([[currentNa, desiredNa], [currentSkill, desiredSkill], [currentBurst, desiredBurst]], [greenBooks, blueBooks, purpleBooks], xingqiuBonus, condensedResin);
     
-    document.getElementById("matsNeeded").innerHTML =
-      "Green Books: " +
+    document.getElementById("matsNeededNum").innerHTML =
       levelTalents.talentBooksNeeded.greenBooks + 
-      "<br>Blue Books: " +
+      "<br>" +
       levelTalents.talentBooksNeeded.blueBooks + 
-      "<br>Purple Books: " +
+      "<br>" +
       levelTalents.talentBooksNeeded.purpleBooks +
-      "<br><br>Weekly Boss Drops: " + 
+      "<br><br>" + 
       levelTalents.weeklyBossRuns.weeklyBossMatsNeeded;
-    document.getElementById("weeklyBossRuns").innerHTML =
-      "Min: " +
+    document.getElementById("weeklyBossRunsNum").innerHTML = 
       levelTalents.weeklyBossRuns.min + 
-      "<br>Avg: " +
+      "<br>" +
       levelTalents.weeklyBossRuns.avg +
-      "<br> Max: " +
+      "<br>" +
       levelTalents.weeklyBossRuns.max;
-    document.getElementById("domainRuns").innerHTML =
-      "Min: " +
+    document.getElementById("domainRunsNum").innerHTML =
       levelTalents.domainRuns.min +
-      "<br>Avg: " +
+      "<br>" +
       levelTalents.domainRuns.avg +
-      "<br> Max: " +
+      "<br>" +
       levelTalents.domainRuns.max;
-    document.getElementById("domainResin").innerHTML =
-      "Min: " +
+    document.getElementById("domainResinNum").innerHTML =
       levelTalents.domainRuns.minResinNeeded +
-      "<br>Avg: " +
+      "<br>" +
       levelTalents.domainRuns.avgResinNeeded +
-      "<br> Max: " +
+      "<br>" +
       levelTalents.domainRuns.maxResinNeeded;
-    document.getElementById("daysTalents").innerHTML =
-      "Min: " +
+    document.getElementById("daysTalentsNum").innerHTML =
       levelTalents.domainRuns.minDays +
-      "<br>Avg: " +
+      "<br>" +
       levelTalents.domainRuns.avgDays +
-      "<br> Max: " +
+      "<br>" +
       levelTalents.domainRuns.maxDays;
   }
   
@@ -247,21 +242,19 @@ function showContent() {
     var invBossMats = parseInt(document.getElementById("invBossMats").value);
     let charAscension = resinForBossMat(currentLvl, desiredLvl, invBossMats);
   
-    document.getElementById("boss-drops").innerHTML =
+    document.getElementById("bossDropsNum").innerHTML =
       charAscension.materialsNeeded;
-    document.getElementById("bossRuns").innerHTML =
-      "Min: " +
+    document.getElementById("bossRunsNum").innerHTML =
       charAscension.min +
-      "<br>Avg: " +
+      "<br>" +
       charAscension.avg +
-      "<br> Max: " +
+      "<br>" +
       charAscension.max;
-    document.getElementById("bossResin").innerHTML =
-      "Min: " +
+    document.getElementById("bossResinNum").innerHTML =
       charAscension.minResinNeeded +
-      "<br>Avg: " +
+      "<br>" +
       charAscension.avgResinNeeded +
-      "<br> Max: " +
+      "<br>" +
       charAscension.maxResinNeeded;
   }
   
