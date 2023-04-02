@@ -4,14 +4,20 @@ This project is a tool for estimating the amount of resin needed to farm specifi
 
 #Example 
 In this example we are leveling up one out of 3 possible talents to the max level with no books currently in our inventory, no xingqiu to help with crafting, and we plan on using condensed resin to make farming faster.
+
 ![image](https://user-images.githubusercontent.com/98846420/229325911-e188d70e-342a-43ad-8ff7-4ea7f10e5e87.png)
+
 After pressing the Calculate Resin button:
+
 ![image](https://user-images.githubusercontent.com/98846420/229326005-ddcb477c-c5b8-4dfd-9136-d63c82821522.png)
 
 
 Similarly, in this example for character ascension, we want to get from level 40 to 80 and already have 2 of the materials needed:
+
 ![image](https://user-images.githubusercontent.com/98846420/229326287-ea69b312-58a5-4d30-9deb-b81c0ddf90e1.png)
+
 After pressing the Calculate Resin button: 
+
 ![image](https://user-images.githubusercontent.com/98846420/229326298-14b50085-3890-4d49-868b-c570443e62a7.png)
 
 
