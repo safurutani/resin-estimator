@@ -212,7 +212,15 @@ input:checked + .slider:before {
 .inazuma {
   scale: 90%;
 }
-@media (max-width: 860px) {
+#note {
+  margin: auto;
+  max-width: 1112px;
+}
+.note {
+  margin-top: -20px;
+  line-height: 1;
+}
+@media (max-width: 1112px) {
   .column {
     width: 100%;
   }
