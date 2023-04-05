@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Catamaran&display=swap" rel="stylesheet">
   </head>
-  <body onload="javascript:initialDisplay();">
+  <body onload="javascript:initialDisplay();showImages();">
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Catamaran&display=swap');
     </style>
@@ -18,21 +18,21 @@
     <br>
   
     <div class="selection">
-      <p class="first-line">Character sort</p>
+      <h3 class="first-line mini_header"><span>Character</span></h3>
       <div class="buttons">
-        <label><input value="alphabetical" name="sort_method" id="sort_alphabet" type="radio" onclick="javascript:showContent();" checked="checked">Alphabetical</label>
-        <label><input value="pyro" name="sort_method" id="sort_pyro" type="radio" onclick="javascript:showContent();">Pyro</label>
-        <label><input value="hydro" name="sort_method" id="sort_hydro" type="radio" onclick="javascript:showContent();">Hydro </label>
-        <label><input value="anemo" name="sort_method" id="sort_anemo" type="radio" onclick="javascript:showContent();">Anemo</label>
-        <label><input value="electro" name="sort_method" id="sort_electro" type="radio" onclick="javascript:showContent();">Electro </label>
-        <label><input value="dendro" name="sort_method" id="sort_dendro" type="radio" onclick="javascript:showContent();">Dendro </label>
-        <label><input value="cryo" name="sort_method" id="sort_cryo" type="radio" onclick="javascript:showContent();">Cryo </label>
-        <label><input value="geo" name="sort_method" id="sort_geo" type="radio" onclick="javascript:showContent();">Geo </label>
+        <label><input value="alphabetical" name="sort_method" id="sort_alphabet" type="radio" onclick="javascript:showContent();showImages();" onchange="showImages();" checked="checked">Alphabetical</label>
+        <label><input value="pyro" name="sort_method" id="sort_pyro" type="radio" onclick="javascript:showContent();showImages();" onchange="showImages();">Pyro</label>
+        <label><input value="hydro" name="sort_method" id="sort_hydro" type="radio" onclick="javascript:showContent();showImages();" onchange="showImages();">Hydro </label>
+        <label><input value="anemo" name="sort_method" id="sort_anemo" type="radio" onclick="javascript:showContent();showImages();" onchange="showImages();">Anemo</label>
+        <label><input value="electro" name="sort_method" id="sort_electro" type="radio" onclick="javascript:showContent();showImages();" onchange="showImages();">Electro </label>
+        <label><input value="dendro" name="sort_method" id="sort_dendro" type="radio" onclick="javascript:showContent();showImages();" onchange="showImages();">Dendro </label>
+        <label><input value="cryo" name="sort_method" id="sort_cryo" type="radio" onclick="javascript:showContent();showImages();" onchange="showImages();">Cryo </label>
+        <label><input value="geo" name="sort_method" id="sort_geo" type="radio" onclick="javascript:showContent();showImages();" onchange="showImages();">Geo </label>
       </div>
       <div id="dropdowns">
-        <div id="alphabetical" class="select">
+        <div id="alphabetical1" class="select">
           <label>Select a character:</label>
-          <select class="dropdowns">
+          <select id="alphabetical" class="dropdowns" onchange="showImages();">
             <option value="1">Albedo</option>
             <option value="2">Alhaitham</option>
             <option value="3">Aloy</option>
@@ -47,7 +47,6 @@
             <option value="12">Cyno</option>
             <option value="13">Dehya</option>
             <option value="14">Diluc</option>
-            <option value="15">Diona</option>
             <option value="16">Dori</option>
             <option value="17">Eula</option>
             <option value="18">Faruzan</option>
@@ -84,27 +83,27 @@
             <option value="49">Thoma</option>
             <option value="50">Tighnari</option>
             <option value="51">Traveler (Anemo)</option>
-            <option value="51">Traveler (Geo)</option>
-            <option value="51">Traveler (Electro)</option>
-            <option value="51">Traveler (Dendro)</option>
-            <option value="52">Venti</option>
-            <option value="53">Wanderer</option>
-            <option value="54">Xiangling</option>
-            <option value="55">Xiao</option>
-            <option value="56">Xingqiu</option>
-            <option value="57">Xinyan</option>
-            <option value="58">Yae Miko</option>
-            <option value="59">Yanfei</option>
-            <option value="60">Yaoyao</option>
-            <option value="61">Yelan</option>
-            <option value="62">Yoimiya</option>
-            <option value="63">Yun Jin</option>
-            <option value="64">Zhongli</option>
+            <option value="52">Traveler (Geo)</option>
+            <option value="53">Traveler (Electro)</option>
+            <option value="54">Traveler (Dendro)</option>
+            <option value="55">Venti</option>
+            <option value="56">Wanderer</option>
+            <option value="57">Xiangling</option>
+            <option value="58">Xiao</option>
+            <option value="59">Xingqiu</option>
+            <option value="60">Xinyan</option>
+            <option value="61">Yae Miko</option>
+            <option value="62">Yanfei</option>
+            <option value="63">Yaoyao</option>
+            <option value="64">Yelan</option>
+            <option value="65">Yoimiya</option>
+            <option value="66">Yun Jin</option>
+            <option value="67">Zhongli</option>
           </select>
         </div>
-        <div id="pyro" class="select">
+        <div id="pyro1" class="select pyro">
           <label>Select a character:</label>
-          <select class="dropdowns">
+          <select id="pyro" class="dropdowns" onchange="showImages();">
             <option value="4">Amber</option>
             <option value="8">Bennett</option>
             <option value="13">Dehya</option>
@@ -112,15 +111,15 @@
             <option value="22">Hu Tao</option>
             <option value="29">Klee</option>
             <option value="49">Thoma</option>
-            <option value="54">Xiangling</option>
-            <option value="57">Xinyan</option>
-            <option value="59">Yanfei</option>
-            <option value="62">Yoimiya</option>
+            <option value="57">Xiangling</option>
+            <option value="60">Xinyan</option>
+            <option value="62">Yanfei</option>
+            <option value="65">Yoimiya</option>
           </select>
         </div>
-        <div id="hydro" class="select">
+        <div id="hydro1" class="select hydro">
           <label>Select a character:</label>
-          <select class="dropdowns">
+          <select id="hydro" class="dropdowns" onchange="showImages();">
             <option value="6">Barbara</option>
             <option value="9">Candace</option>
             <option value="27">Kamisato Ayato</option>
@@ -128,13 +127,13 @@
             <option value="36">Nilou</option>
             <option value="43">Sangonomiya Kokomi</option>
             <option value="48">Tartaglia</option>
-            <option value="56">Xingqiu</option>
-            <option value="61">Yelan</option>
+            <option value="59">Xingqiu</option>
+            <option value="64">Yelan</option>
           </select>
         </div>
-        <div id="anemo" class="select">
+        <div id="anemo1" class="select anemo">
           <label>Select a character:</label>
-          <select class="dropdowns">
+          <select id="anemo" class="dropdowns" onchange="showImages();">
             <option value="18">Faruzan</option>
             <option value="23">Jean</option>
             <option value="24">Kaedehara Kazuha</option>
@@ -142,14 +141,14 @@
             <option value="46">Shikanoin Heizou</option>
             <option value="47">Sucrose</option>
             <option value="51">Traveler (Anemo)</option>
-            <option value="52">Venti</option>
-            <option value="53">Wanderer</option>
-            <option value="55">Xiao</option>
+            <option value="55">Venti</option>
+            <option value="56">Wanderer</option>
+            <option value="58">Xiao</option>
           </select>
         </div>
-        <div id="electro" class="select">
+        <div id="electro1" class="select electro">
           <label>Select a character:</label>
-          <select class="dropdowns">
+          <select id="electro" class="dropdowns" onchange="showImages();">
             <option value="7">Beidou</option>
             <option value="12">Cyno</option>
             <option value="16">Dori</option>
@@ -160,24 +159,24 @@
             <option value="33">Lisa</option>
             <option value="40">Raiden Shogun</option>
             <option value="41">Razor</option>
-            <option value="51">Traveler (Electro)</option>
-            <option value="58">Yae Miko</option>
+            <option value="53">Traveler (Electro)</option>
+            <option value="61">Yae Miko</option>
           </select>
         </div>
-        <div id="dendro" class="select">
+        <div id="dendro1" class="select dendro">
           <label>Select a character:</label>
-          <select class="dropdowns">
+          <select id="dendro" class="dropdowns" onchange="showImages();">
             <option value="2">Alhaitham</option>
             <option value="11">Collei</option>
             <option value="35">Nahida</option>
             <option value="50">Tighnari</option>
-            <option value="51">Traveler (Dendro)</option>
-            <option value="60">Yaoyao</option>
+            <option value="54">Traveler (Dendro)</option>
+            <option value="63">Yaoyao</option>
           </select>
         </div>
-        <div id="cryo" class="select">
+        <div id="cryo1" class="select cryo">
           <label>Select a character:</label>
-          <select class="dropdowns">
+          <select id="cryo" class="dropdowns" onchange="showImages();">
             <option value="3">Aloy</option>
             <option value="10">Chongyun</option>
             <option value="15">Diona</option>
@@ -191,20 +190,1054 @@
             <option value="45">Shenhe</option>
           </select>
         </div>
-        <div id="geo" class="select">
+        <div id="geo1" class="select geo">
           <label>Select a character:</label>
-          <select class="dropdowns">
+          <select id="geo" class="dropdowns" onchange="showImages();">
             <option value="1">Albedo</option>
             <option value="5">Arataki Itto</option>
             <option value="21">Gorou</option>
             <option value="37">Ningguang</option>
             <option value="38">Noelle</option>
-            <option value="51">Traveler (Geo)</option>
-            <option value="63">Yun Jin</option>
-            <option value="64">Zhongli</option>
+            <option value="52">Traveler (Geo)</option>
+            <option value="66">Yun Jin</option>
+            <option value="67">Zhongli</option>
           </select>
         </div>
       </div>
+      <div id="albedoImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/02d9063f6011af8b136a5cf7608930fa.png" class="image" alt="Albedo">
+          <p class="subtitle">Albedo</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_401.webp?x78105" class="image" alt="">
+          <p class="subtitle">Ballad<br>(Wed/Sat)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_467_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Tusk of Monoceros Caeli<br>(Childe)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_206_100.webp?x78105" alt="">
+          <p class="subtitle">Basalt Pillar<br>(Geo Hypostasis)</p>
+        </div>
+      </div>
+      <div id="alhaithamImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/36315b35da9c85cb2f73d40eab5be1e2.png" class="image" alt="Alhaitham">
+          <p class="subtitle">Alhaitham</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_n104332_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Ingenuity<br>(Tue/Fri)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_n113042_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Mirror of Mushin<br>(Scaramouche)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_n113044_100.webp?x78105" alt="">
+          <p class="subtitle">Pseudo-Stamens<br>(Setekh Wenut)</p>
+        </div>
+      </div>
+      <div id="aloyImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/59408ce97369764dc4aed07ed33e80d3.png" class="image" alt="Aloy">
+          <p class="subtitle">Aloy</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_421.webp?x78105" class="image" alt="">
+          <p class="subtitle">Freedom<br>(Mon/Thur)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_480_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Molten Moment<br>(La Signora)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_208_100.webp?x78105" alt="">
+          <p class="subtitle">Crystalline Bloom<br>(Cryo Hypostasis)</p>
+        </div>
+      </div>
+      <div id="amberImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/94e6e174a9b7e19a4adb1ca219f50418.png" class="image" alt="Amber">
+          <p class="subtitle">Amber</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_421.webp?x78105" class="image" alt="">
+          <p class="subtitle">Freedom<br>(Mon/Thur)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_463_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Dvalin's Sigh<br>(Stormterror)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_201_100.webp?x78105" alt="">
+          <p class="subtitle">Everflame Seed<br>(Pyro Regisvine)</p>
+        </div>
+      </div>
+      <div id="aratakiImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/82831c073a017547960729ba11c38b19.png" class="image" alt="Arataki Itto">
+          <p class="subtitle">Arataki Itto</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_416_100.webp?x78105" class="image inazuma" alt="">
+          <p class="subtitle">Elegance<br>(Tue/Fri)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_482_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Ashen Heart<br>(La Signora)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_215_100.webp?x78105" alt="">
+          <p class="subtitle">Riftborn Regalia<br>(Golden Wolflord)</p>
+        </div>
+      </div>
+      <div id="barbaraImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/c9f5957ac2794b74903da451a3a6c53d.png" class="image" alt="Barbara">
+          <p class="subtitle">Barbara</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_421.webp?x78105" class="image" alt="">
+          <p class="subtitle">Freedom<br>(Mon/Thur)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_465_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Ring of Boreas (Andrius Wolf of the North)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_202_100.webp?x78105" alt="">
+          <p class="subtitle">Cleansing Heart<br>(Oceanid)</p>
+        </div>
+      </div>
+      <div id="beidouImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/bc72fc7ad3820d660a24ccfdbee49df6.png" class="image" alt="Beidou">
+          <p class="subtitle">Beidou</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_431_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Gold<br>(Wed/Sat)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_463_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Dvalin's Sigh<br>(Stormterror)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_203_100.webp?x78105" alt="">
+          <p class="subtitle">Lightning Prism<br>(Electro Hypostasis)</p>
+        </div>
+      </div>
+      <div id="bennettImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/6ad575bf00d6e0b3f9bd49ebe71b6753.png" class="image" alt="Bennett">
+          <p class="subtitle">Bennett</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_451.webp?x78105" class="image" alt="">
+          <p class="subtitle">Resistance<br>(Tue/Fri)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_461_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Dvalin's Plume<br>(Stormterror)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_201_100.webp?x78105" alt="">
+          <p class="subtitle" alt="">Everflame Seed<br>(Pyro Regisvine)</p>
+        </div>
+      </div>
+      <div id="candaceImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/cdc8db004753ad22f231a842e466deb3.png" class="image" alt="Candace">
+          <p class="subtitle">Candace</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_n104329_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Admonition<br>(Mon/Thur)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_484_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Tears of the Calamitous God<br>(Raiden Shogun)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_n113039_100.webp?x78105" alt="">
+          <p class="subtitle">Light Guiding Tetrahedron<br>(ASIMON)</p>
+        </div>
+      </div>
+      <div id="chongyunImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/dd19a28be6a956809b55fb1711600352.png" class="image" alt="Chongyun">
+          <p class="subtitle">Chongyun</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_411_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Diligence<br>(Tue/Fri)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_463_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Dvalin's Sigh<br>(Stormterror)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_204_100.webp?x78105" alt="">
+          <p class="subtitle">Hoarfrost Core<br>(Cryo Regisvine)</p>
+        </div>
+      </div>
+      <div id="colleiImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/6143f987eccd7629ab1610a52f566ef0.png" class="image" alt="Collei">
+          <p class="subtitle">Collei</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_n104335_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Praxis<br>(Wed/Sat)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_484_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Tears of the Calamitous God<br>(Raiden Shogun)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_n113036_100.webp?x78105" alt="">
+          <p class="subtitle">Majestic Hooked Beak<br>(Jadeplume Terrorshroom)</p>
+        </div>
+      </div>
+      <div id="cynoImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/da53bd545a505f9689f6c903e2ec5687.png" class="image" alt="Cyno">
+          <p class="subtitle">Cyno</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_n104329_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Admonition<br>(Mon/Thur)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_483_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Mudra of the Malefic General<br>(Raiden Shogun)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_n113037_100.webp?x78105" alt="">
+          <p class="subtitle">Thunderclap Fruitcore<br>(Electro Regisvine)</p>
+        </div>
+      </div>
+      <div id="dehyaImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/fd4a83fdb0c03436418392d39cfc3d56.png" class="image" alt="Dehya">
+          <p class="subtitle">Dehya</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_n104335_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Praxis<br>(Wed/Sat)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_n113041_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Puppet Strings<br>(Scaramouche)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_n113039_100.webp?x78105" alt="">
+          <p class="subtitle">Light Guiding Tetrahedron<br>(ASIMON)</p>
+        </div>
+      </div>
+      <div id="dilucImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/cad7b28703603bcdaa189cdf343b1ee6.png" class="image" alt="Diluc">
+          <p class="subtitle">Diluc</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_451.webp?x78105" class="image" alt="">
+          <p class="subtitle">Resistance<br>(Tue/Fri)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_461_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Dvalin's Plume<br>(Stormterror)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_201_100.webp?x78105" alt="">
+          <p class="subtitle">Everflame Seed<br>(Pyro Regisvine)</p>
+        </div>
+      </div>
+      <div id="dionaImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/2abab91e2d5cd5bcf83b8a1456ef92f7.png" class="image" alt="Diona">
+          <p class="subtitle">Diona</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_421.webp?x78105" class="image" alt="">
+          <p class="subtitle">Freedom<br>(Mon/Thur)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_468_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Shard of a Foul Legacy<br>(Childe)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_204_100.webp?x78105" alt="">
+          <p class="subtitle">Hoarfrost Core<br>(Cryo Regisvine)</p>
+        </div>
+      </div>
+      <div id="doriImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/182d86cf5f5d540cb75bf02c047c626c.png" class="image" alt="Dori">
+          <p class="subtitle">Dori</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_n104332_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Ingenuity<br>(Tue/Fri)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_471_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Bloodjade Branch<br>(Azhdaha)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_n113037_100.webp?x78105" alt="">
+          <p class="subtitle">Thunderclap Fruitcore<br>(Electro Regisvine)</p>
+        </div>
+      </div>
+      <div id="eulaImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/d9049e91310e5a5691075d68e3e2724f.png" class="image" alt="Eula">
+          <p class="subtitle">Eula</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_451.webp?x78105" class="image" alt="">
+          <p class="subtitle">Resistance<br>(Tue/Fri)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_470_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Dragon Lord's Crown<br>(Azhdaha)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_208_100.webp?x78105" alt="">
+          <p class="subtitle">Crystalline Bloom<br>(Cryo Hypostasis)</p>
+        </div>
+      </div>
+      <div id="faruzanImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/072f4975dfbeef2d819619569af1219a.png" class="image" alt="Faruzan">
+          <p class="subtitle">Faruzan</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_n104329_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Admonition<br>(Mon/Thur)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_n113041_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Puppet Strings<br>(Scaramouche)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_n113039_100.webp?x78105" alt="">
+          <p class="subtitle">Light Guiding Tetrahedron<br>(ASIMON)</p>
+        </div>
+      </div>
+      <div id="fischlImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/6296040f18475a3db577750de0851bfe.png" class="image" alt="Fischl">
+          <p class="subtitle">Fischl</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_401.webp?x78105" class="image" alt="">
+          <p class="subtitle">Ballad<br>(Wed/Sat)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_466_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Spirit Locket of Boreas<br>(Andrius Wolf of the North)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_203_100.webp?x78105" alt="">
+          <p class="subtitle">Lightning Prism<br>(Electro Hypostasis)</p>
+        </div>
+      </div>
+      <div id="ganyuImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/d4996a74a7dffcc212dceda135793d89.png" class="image" alt="Ganyu">
+          <p class="subtitle">Ganyu</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_411_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Diligence<br>(Tue/Fri)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_469_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Shadow of the Warrior<br>(Childe)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_204_100.webp?x78105" alt="">
+          <p class="subtitle">Hoarfrost Core<br>(Cryo Regisvine)</p>
+        </div>
+      </div>
+      <div id="gorouImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/e4e4a7ff3545c4c8dc0f6938d8642ee2.png" class="image" alt="Gorou">
+          <p class="subtitle">Gorou</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_426_100.webp?x78105" class="image inazuma" alt="">
+          <p class="subtitle">Light<br>(Wed/Sat)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_480_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Molten Moment<br>(La Signora)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_211_100.webp?x78105" alt="">
+          <p class="subtitle">Perpetual Heart<br>(Perpetual Mechanical Array)</p>
+        </div>
+      </div>
+      <div id="huTaoImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/0ba425ec3bfb3000047ad2829fd3d6d4.png" class="image" alt="Hu Tao">
+          <p class="subtitle">Hu Tao</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_411_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Diligence<br>(Tue/Fri)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_468_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Shard of a Foul Legacy<br>(Childe)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_207_100.webp?x78105" alt="">
+          <p class="subtitle">Juvenile Jade<br>(Primo Geovishap)</p>
+        </div>
+      </div>
+      <div id="yoimiyaImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/a06f2a1700a7d9e88c963748f52acedf.png" class="image" alt="Yoimiya">
+          <p class="subtitle">Yoimiya</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_406_100.webp?x78105" class="image inazuma" alt="">
+          <p class="subtitle">Transience<br>(Mon/Thur)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_470_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Dragon Lord's Crown<br>(Azhdaha)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_212_100.webp?x78105" alt="">
+          <p class="subtitle">Smoldering Pearl<br>(Pyro Hypostasis)</p>
+        </div>
+      </div>
+      <div id="kleeImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/8043f7e529f457c8704ab1c377cbedd0.png" class="image" alt="Klee">
+          <p class="subtitle">Klee</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_421.webp?x78105" class="image" alt="">
+          <p class="subtitle">Freedom<br>(Mon/Thur)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_465_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Ring of Boreas (Andrius Wolf of the North)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_201_100.webp?x78105" alt="">
+          <p class="subtitle">Everflame Seed<br>(Pyro Regisvine)</p>
+        </div>
+      </div>
+      <div id="thomaImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/96f586014f1aeef8a2c7a871f9b3b3ca.png" class="image" alt="Thoma">
+          <p class="subtitle">Thoma</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_406_100.webp?x78105" class="image inazuma" alt="">
+          <p class="subtitle">Transience<br>(Mon/Thur)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_481_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Hellfire Butterfly<br>(La Signora)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_212_100.webp?x78105" alt="">
+          <p class="subtitle">Smoldering Pearl<br>(Pyro Hypostasis)</p>
+        </div>
+      </div>
+      <div id="yanfeiImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/8b472ccdfb529c7d7f42e2310f4b9192.png" class="image" alt="Yanfei">
+          <p class="subtitle">Yanfei</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_431_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Gold<br>(Wed/Sat)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_471_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Bloodjade Branch<br>(Azhdaha)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_207_100.webp?x78105" alt="">
+          <p class="subtitle">Juvenile Jade<br>(Primo Geovishap)</p>
+        </div>
+      </div>
+      <div id="xinyanImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/0e9769ce232a7adfdec34238ee6f4f1c.png" class="image" alt="Xinyan">
+          <p class="subtitle">Xinyan</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_431_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Gold<br>(Wed/Sat)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_467_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Tusk of Monoceros Caeli<br>(Childe)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_201_100.webp?x78105" alt="">
+          <p class="subtitle">Everflame Seed<br>(Pyro Regisvine)</p>
+        </div>
+      </div>
+      <div id="xianglingImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/7df14f5de51f16278048d60dc7ebafe5.png" class="image" alt="Xiangling">
+          <p class="subtitle">Xiangling</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_411_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Diligence<br>(Tue/Fri)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_462_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Dvalin's Claw<br>(Stormterror)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_201_100.webp?x78105" alt="">
+          <p class="subtitle">Everflame Seed<br>(Pyro Regisvine)</p>
+        </div>
+      </div>
+      <div id="nilouImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/894fc4d1e97acbc252da281dc50bf65f.png" class="image" alt="Nilou">
+          <p class="subtitle">Nilou</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_n104335_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Praxis<br>(Wed/Sat)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_484_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Tears of the Calamitous God<br>(Raiden Shogun)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_n113038_100.webp?x78105" alt="">
+          <p class="subtitle">Perpetual Caliber<br>(Aeonblight Drake)</p>
+        </div>
+      </div>
+      <div id="ayatoImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/c50aa56ec85b97d8443f1d5b74720721.png" class="image" alt="Kamisato Ayato">
+          <p class="subtitle">Kamisato Ayato</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_416_100.webp?x78105" class="image inazuma" alt="">
+          <p class="subtitle">Elegance<br>(Tue/Fri)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_483_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Mudra of the Malefic General<br>(Raiden Shogun)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_213_100.webp?x78105" alt="">
+          <p class="subtitle">Dew of Repudiation<br>(Hydro Hypostasis)</p>
+        </div>
+      </div>
+      <div id="yelanImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/37a7b310bca9e606f06d92d81ba285be.png" class="image" alt="Yelan">
+          <p class="subtitle">Yelan</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_441_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Prosperity<br>(Mon/Thur)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_472_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Gilded Scale<br>(Azhdaha)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_486_100.webp?x78105" alt="">
+          <p class="subtitle">Runic Fang<br>(Ruin Serpent)</p>
+        </div>
+      </div>
+      <div id="kokomiImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/24f6c1a1ae0c34790d91d077c26c87de.png" class="image" alt="Sangonomiya Kokomi">
+          <p class="subtitle">Sangonomiya Kokomi</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_406_100.webp?x78105" class="image inazuma" alt="">
+          <p class="subtitle">Transience<br>(Mon/Thur)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_481_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Hellfire Butterfly<br>(La Signora)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_213_100.webp?x78105" alt="">
+          <p class="subtitle">Dew of Repudiation<br>(Hydro Hypostasis)</p>
+        </div>
+      </div>
+      <div id="monaImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/c42c43cc3c8d402fb693c67e2aac1eb7.png" class="image" alt="Mona">
+          <p class="subtitle">Mona</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_451.webp?x78105" class="image" alt="">
+          <p class="subtitle">Resistance<br>(Tue/Fri)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_465_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Ring of Boreas (Andrius Wolf of the North)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_202_100.webp?x78105" alt="">
+          <p class="subtitle">Cleansing Heart<br>(Oceanid)</p>
+        </div>
+      </div>
+      <div id="childeImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/9a3a4d6cd96756824911a3f060949f10.png" class="image" alt="Tartaglia">
+          <p class="subtitle">Tartaglia</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_421.webp?x78105" class="image" alt="">
+          <p class="subtitle">Freedom<br>(Mon/Thur)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_468_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Shard of a Foul Legacy<br>(Childe)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_202_100.webp?x78105" alt="">
+          <p class="subtitle">Cleansing Heart<br>(Oceanid)</p>
+        </div>
+      </div>
+      <div id="xingqiuImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/8b613f18a56e7a923165ce261f7bfd89.png" class="image" alt="Xingqiu">
+          <p class="subtitle">Xingqiu</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_431_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Gold<br>(Wed/Sat)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_464_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Tail of Boreas<br>(Andrius Wolf of the North)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_202_100.webp?x78105" alt="">
+          <p class="subtitle">Cleansing Heart<br>(Oceanid)</p>
+        </div>
+      </div>
+      <div id="wandererImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/bc65645d85563f6202f47f3b2423c199.png" class="image" alt="Wanderer">
+          <p class="subtitle">Wanderer</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_n104335_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Praxis<br>(Wed/Sat)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_n113043_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Daka's Bell<br>(Scaramouche)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_n113038_100.webp?x78105" alt="">
+          <p class="subtitle">Perpetual Caliber<br>(Aeonblight Drake)</p>
+        </div>
+      </div>
+      <div id="kazuhaImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/3fceb26e73c4500b5d4a0c65e15baa80.png" class="image" alt="Kaedehara Kazuha">
+          <p class="subtitle">Kaedehara Kazuha</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_411_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Diligence<br>(Tue/Fri)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_472_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Gilded Scale<br>(Azhdaha)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_210_100.webp?x78105" alt="">
+          <p class="subtitle">Marionette Core<br>(Maguu Kenki)</p>
+        </div>
+      </div>
+      <div id="xiaoImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/6bbe8c6175542c285f386d5349d693a2.png" class="image" alt="Xiao">
+          <p class="subtitle">Xiao</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_441_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Prosperity<br>(Mon/Thur)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_469_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Shadow of the Warrior<br>(Childe)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_207_100.webp?x78105" alt="">
+          <p class="subtitle">Juvenile Jade<br>(Primo Geovishap)</p>
+        </div>
+      </div>
+      <div id="ventiImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/991feb024c15c4b3285b8ed92f216cf8.png" class="image" alt="Venti">
+          <p class="subtitle">Venti</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_401.webp?x78105" class="image" alt="">
+          <p class="subtitle">Ballad<br>(Wed/Sat)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_464_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Tail of Boreas<br>(Andrius Wolf of the North)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_205_100.webp?x78105" alt="">
+          <p class="subtitle">Hurricane Seed<br>(Anemo Hypostasis)</p>
+        </div>
+      </div>
+      <div id="jeanImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/ff5017f5b0f2387464686db39019c57d.png" class="image" alt="Jean">
+          <p class="subtitle">Jean</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_451.webp?x78105" class="image" alt="">
+          <p class="subtitle">Resistance<br>(Tue/Fri)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_461_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Dvalin's Plume<br>(Stormterror)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_205_100.webp?x78105" alt="">
+          <p class="subtitle">Hurricane Seed<br>(Anemo Hypostasis)</p>
+        </div>
+      </div>
+      <div id="heizouImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/c86881457c2680d6e6daceac0d7c0878.png" class="image" alt="Shikanoin Heizou">
+          <p class="subtitle">Shikanoin Heizou</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_406_100.webp?x78105" class="image inazuma" alt="">
+          <p class="subtitle">Transience<br>(Mon/Thur)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_485_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">The Meaning of Aeons<br>(Raiden Shogun)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_486_100.webp?x78105" alt="">
+          <p class="subtitle">Runic Fang<br>(Ruin Serpent)</p>
+        </div>
+      </div>
+      <div id="sayuImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/947e46a2ce6747c6128f9465934650f7.png" class="image" alt="Sayu">
+          <p class="subtitle">Sayu</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_426_100.webp?x78105" class="image inazuma" alt="">
+          <p class="subtitle">Light<br>(Wed/Sat)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_472_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Gilded Scale<br>(Azhdaha)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_210_100.webp?x78105" alt="">
+          <p class="subtitle">Marionette Core<br>(Maguu Kenki)</p>
+        </div>
+      </div>
+      <div id="sucroseImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/4d3c17d6ec9c6fc56000d527e14fbd77.png" class="image" alt="Sucrose">
+          <p class="subtitle">Sucrose</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_421.webp?x78105" class="image" alt="">
+          <p class="subtitle">Freedom<br>(Mon/Thur)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_466_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Spirit Locket of Boreas<br>(Andrius Wolf of the North)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_205_100.webp?x78105" alt="">
+          <p class="subtitle">Hurricane Seed<br>(Anemo Hypostasis)</p>
+        </div>
+      </div>
+      <div id="yaeMikoImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/0f4a0a19886f93cc56bd0348513982aa.png" class="image" alt="Yae Miko">
+          <p class="subtitle">Yae Miko</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_426_100.webp?x78105" class="image inazuma" alt="">
+          <p class="subtitle">Light<br>(Wed/Sat)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_485_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">The Meaning of Aeons<br>(Raiden Shogun)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_216_100.webp?x78105" alt="">
+          <p class="subtitle">Dragonheir's False Fin<br>(Bathysmal Vishap Herd)</p>
+        </div>
+      </div>
+      <div id="raidenImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/8fd07d0d0c0b2e2bc39ceb2db66dcfdc.png" class="image" alt="Raiden Shogun">
+          <p class="subtitle">Raiden Shogun</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_426_100.webp?x78105" class="image inazuma" alt="">
+          <p class="subtitle">Light<br>(Wed/Sat)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_480_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Molten Moment<br>(La Signora)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_214_100.webp?x78105" alt="">
+          <p class="subtitle">Storm Beads<br>(Thunder Manifestation)</p>
+        </div>
+      </div>
+      <div id="keqingImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/47dd7a0cc5fa3b5e4c6c728e82c71ff7.png" class="image" alt="Keqing">
+          <p class="subtitle">Keqing</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_441_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Prosperity<br>(Mon/Thur)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_465_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Ring of Boreas (Andrius Wolf of the North)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_203_100.webp?x78105" alt="">
+          <p class="subtitle">Lightning Prism<br>(Electro Hypostasis)</p>
+        </div>
+      </div>
+      <div id="kukiImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/542801d12222614a0bf2308f485e8cc1.png" class="image" alt="Kuki Shinobu">
+          <p class="subtitle">Kuki Shinobu</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_416_100.webp?x78105" class="image inazuma" alt="">
+          <p class="subtitle">Elegance<br>(Tue/Fri)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_484_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Tears of the Calamitous God<br>(Raiden Shogun)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_486_100.webp?x78105" alt="">
+          <p class="subtitle">Runic Fang<br>(Ruin Serpent)</p>
+        </div>
+      </div>
+      <div id="saraImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/e1b2339d8270295d448bf3032e41a881.png" class="image" alt="Kujou Sara">
+          <p class="subtitle">Kujou Sara</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_416_100.webp?x78105" class="image inazuma" alt="">
+          <p class="subtitle">Elegance<br>(Tue/Fri)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_482_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Ashen Heart<br>(La Signora)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_214_100.webp?x78105" alt="">
+          <p class="subtitle">Storm Beads<br>(Thunder Manifestation)</p>
+        </div>
+      </div>
+      <div id="razorImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/528e7795e0924e19594e623918176838.png" class="image" alt="Razor">
+          <p class="subtitle">Razor</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_451.webp?x78105" class="image" alt="">
+          <p class="subtitle">Resistance<br>(Tue/Fri)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_462_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Dvalin's Claw<br>(Stormterror)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_203_100.webp?x78105" alt="">
+          <p class="subtitle">Lightning Prism<br>(Electro Hypostasis)</p>
+        </div>
+      </div>
+      <div id="lisaImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/65a82a170b4197513b394b4dc47ee2f6.png" class="image" alt="Lisa">
+          <p class="subtitle">Lisa</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_401.webp?x78105" class="image" alt="">
+          <p class="subtitle">Ballad<br>(Wed/Sat)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_462_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Dvalin's Claw<br>(Stormterror)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_203_100.webp?x78105" alt="">
+          <p class="subtitle">Lightning Prism<br>(Electro Hypostasis)</p>
+        </div>
+      </div>
+      <div id="nahidaImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/37b3b5dfb79c8cd2a9f53538379abd70.png" class="image" alt="Nahida">
+          <p class="subtitle">Nahida</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_n104332_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Ingenuity<br>(Tue/Fri)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_n113041_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Puppet Strings<br>(Scaramouche)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_n113040_100.webp?x78105" alt="">
+          <p class="subtitle">Quelled Creeper<br>(Dendro Hypostasis)</p>
+        </div>
+      </div>
+      <div id="yaoyaoImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/071f0d6deaa133a49ff9fb67310e9cc2.png" class="image" alt="Yaoyao">
+          <p class="subtitle">Yaoyao</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_411_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Diligence<br>(Tue/Fri)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_n113043_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Daka's Bell<br>(Scarabmouche)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_n113040_100.webp?x78105" alt="">
+          <p class="subtitle">Quelled Creeper<br>(Dendro Hypostasis)</p>
+        </div>
+      </div>
+      <div id="tighnariImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/ba69792d2a708bb8b81a40c6040f92d1.png" class="image" alt="Tighnari">
+          <p class="subtitle">Tighnari</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_n104329_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Admonition<br>(Mon/Thur)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_485_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">The Meaning of Aeons<br>(Raiden Shogun)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_n113036_100.webp?x78105" alt="">
+          <p class="subtitle">Majestic Hooked Beak<br>(Jadeplume Terrorshroom)</p>
+        </div>
+      </div>
+      <div id="shenheImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/31e6443d010e366980d787926ba86c20.png" class="image" alt="Shenhe">
+          <p class="subtitle">Shenhe</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_441_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Prosperity<br>(Mon/Thur)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_481_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Hellfire Butterfly<br>(La Signora)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_216_100.webp?x78105" alt="">
+          <p class="subtitle">Dragonheir's False Fin<br>(Bathysmal Vishap Herd)</p>
+        </div>
+      </div>
+      <div id="qiqiImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/b1e559c9d6942bd9479bd7cd7b9d06ed.png" class="image" alt="Qiqi">
+          <p class="subtitle">Qiqi</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_441_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Prosperity<br>(Mon/Thur)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_464_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Tail of Boreas<br>(Andrius Wolf of the North)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_204_100.webp?x78105" alt="">
+          <p class="subtitle">Hoarfrost Core<br>(Cryo Regisvine)</p>
+        </div>
+      </div>
+      <div id="laylaImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/77e2b40a258aa001c3f6e8e18f92fb6f.png" class="image" alt="Layla">
+          <p class="subtitle">Layla</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_n104332_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Ingenuity<br>(Tue/Fri)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_n113042_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Mirror of Mushin<br>(Scaramouche)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_n113038_100.webp?x78105" alt="">
+          <p class="subtitle">Perpetual Caliber<br>(Aeonblight Drake)</p>
+        </div>
+      </div>
+      <div id="ayakaImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/4c264635e3e6c2f26478af664f10890b.png" class="image" alt="Kamisato Ayaka">
+          <p class="subtitle">Kamisato Ayaka</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_416_100.webp?x78105" class="image inazuma" alt="">
+          <p class="subtitle">Elegance<br>(Tue/Fri)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_471_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Bloodjade Branch<br>(Azhdaha)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_211_100.webp?x78105" alt="">
+          <p class="subtitle">Perpetual Heart<br>(Perpetual Mechanical Array)</p>
+        </div>
+      </div>
+      <div id="rosariaImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/f059309cf255dbb84e57d30dda9ee89a.png" class="image" alt="Rosaria">
+          <p class="subtitle">Rosaria</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_401.webp?x78105" class="image" alt="">
+          <p class="subtitle">Ballad<br>(Wed/Sat)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_469_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Shadow of the Warrior<br>(Childe)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_204_100.webp?x78105" alt="">
+          <p class="subtitle">Hoarfrost Core<br>(Cryo Regisvine)</p>
+        </div>
+      </div>
+      <div id="kaeyaImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/462b086abcc9226eda1eefe0bf731c69.png" class="image" alt="Kaeya">
+          <p class="subtitle">Kaeya</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_401.webp?x78105" class="image" alt="">
+          <p class="subtitle">Ballad<br>(Wed/Sat)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_466_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Spirit Locket of Boreas<br>(Andrius Wolf of the North)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_204_100.webp?x78105" alt="">
+          <p class="subtitle">Hoarfrost Core<br>(Cryo Regisvine)</p>
+        </div>
+      </div>
+      <div id="zhongliImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/a5a83d1b47243f8f7df3eacf00911ad8.png" class="image" alt="Zhongli">
+          <p class="subtitle">Zhongli</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_431_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Gold<br>(Wed/Sat)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_467_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Tusk of Monoceros Caeli<br>(Childe)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_206_100.webp?x78105" alt="">
+          <p class="subtitle">Basalt Pillar<br>(Geo Hypostasis)</p>
+        </div>
+      </div>
+      <div id="yunjinImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/21118a83259abdee1f747bb8818318f9.png" class="image" alt="Yun Jin">
+          <p class="subtitle">Yun Jin</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_411_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Diligence<br>(Tue/Fri)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_482_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Ashen Heart<br>(La Signora)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_215_100.webp?x78105" alt="">
+          <p class="subtitle">Riftborn Regalia<br>(Golden Wolflord)</p>
+        </div>
+      </div>
+      <div id="noelleImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/287220e29f2125b12d63f746519352f7.png" class="image" alt="Noelle">
+          <p class="subtitle">Noelle</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_451.webp?x78105" class="image" alt="">
+          <p class="subtitle">Resistance<br>(Tue/Fri)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_462_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Dvalin's Claw<br>(Stormterror)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_206_100.webp?x78105" alt="">
+          <p class="subtitle">Basalt Pillar<br>(Geo Hypostasis)</p>
+        </div>
+      </div>
+      <div id="ningguangImgs" class="imageDiv">
+        <div class="charImg">
+          <img src="https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u76dud/7c1e573045f1c1d88241184d19eb4304.png" class="image" alt="Ningguang">
+          <p class="subtitle">Ningguang</p>
+        </div>
+        <div class="talentImg"><img src="https://genshin.honeyhunterworld.com/img/i_441_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Prosperity<br>(Mon/Thur)</p>
+        </div>
+        <div class="weeklyMatImg"><img src="https://genshin.honeyhunterworld.com/img/i_466_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Spirit Locket of Boreas<br>(Andrius Wolf of the North)</p>
+        </div>
+        <div class="charAscImg"><img src="https://genshin.honeyhunterworld.com/img/i_206_100.webp?x78105" alt="">
+          <p class="subtitle">Basalt Pillar<br>(Geo Hypostasis)</p>
+        </div>
+      </div>
+      <div id="anemoTravelerImgs" class="imageDiv">
+        <div class="travelerImg">
+          <img src="https://uploadstatic-sea.hoyoverse.com/hk4e/e20200928calculate/character_icon/UI_AvatarIcon_PlayerGirl.png" class="image" alt="">
+          <p class="subtitle">Lumine<br>(Anemo)</p>
+        </div>
+        <div class="travelerImg"><img src="https://uploadstatic-sea.hoyoverse.com/hk4e/e20200928calculate/character_icon/UI_AvatarIcon_PlayerBoy.png" class="image" alt="">
+          <p class="subtitle">Aether<br>(Anemo)</p>
+        </div>
+        <div class="travelerTalent">
+          <div class="multipleBooks"><img src="https://genshin.honeyhunterworld.com/img/i_421.webp?x78105" class="image" alt="">
+            <img src="https://genshin.honeyhunterworld.com/img/i_451.webp?x78105" class="image" alt="">
+            <img src="https://genshin.honeyhunterworld.com/img/i_401.webp?x78105" class="image" alt="">
+          </div>
+          <div class="multipleNames">
+            <p class="subtitle">Freedom (Mon/Thur)<br>Resistance (Tue/Fri)<br>Ballad (Wed/Sat)</p>
+          </div>
+        </div>
+        <div class="travelerMat"><img src="https://genshin.honeyhunterworld.com/img/i_463_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Dvalin's Sigh<br>(Stormterror)</p>
+        </div>
+      </div>
+      <div id="electroTravelerImgs" class="imageDiv">
+        <div class="travelerImg">
+          <img src="https://uploadstatic-sea.hoyoverse.com/hk4e/e20200928calculate/character_icon/UI_AvatarIcon_PlayerGirl.png" class="image" alt="">
+          <p class="subtitle">Lumine<br>(Electro)</p>
+        </div>
+        <div class="travelerImg"><img src="https://uploadstatic-sea.hoyoverse.com/hk4e/e20200928calculate/character_icon/UI_AvatarIcon_PlayerBoy.png" class="image" alt="">
+          <p class="subtitle">Aether<br>(Electro)</p>
+        </div>
+        <div class="travelerTalent">
+          <div class="multipleBooks"><img src="https://genshin.honeyhunterworld.com/img/i_406_100.webp?x78105" class="image inazuma" alt="">
+            <img src="https://genshin.honeyhunterworld.com/img/i_416_100.webp?x78105" class="image inazuma" alt="">
+            <img src="https://genshin.honeyhunterworld.com/img/i_426_100.webp?x78105" class="image inazuma" alt="">
+          </div>
+          <div class="multipleNames">
+            <p class="subtitle">Transience (Mon/Thur)<br>Elegance (Tue/Fri)<br>Light (Wed/Sat)</p>
+          </div>
+        </div>
+        <div class="travelerMat"><img src="https://genshin.honeyhunterworld.com/img/i_470_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Dragon Lord's Crown<br>(Azhdaha)</p>
+        </div>
+      </div>
+      <div id="geoTravelerImgs" class="imageDiv">
+        <div class="travelerImg">
+          <img src="https://uploadstatic-sea.hoyoverse.com/hk4e/e20200928calculate/character_icon/UI_AvatarIcon_PlayerGirl.png" class="image" alt="">
+          <p class="subtitle">Lumine<br>(Geo)</p>
+        </div>
+        <div class="travelerImg"><img src="https://uploadstatic-sea.hoyoverse.com/hk4e/e20200928calculate/character_icon/UI_AvatarIcon_PlayerBoy.png" class="image" alt="">
+          <p class="subtitle">Aether<br>(Geo)</p>
+        </div>
+        <div class="travelerTalent">
+          <div class="multipleBooks"><img src="https://genshin.honeyhunterworld.com/img/i_441_100.webp?x78105" class="image" alt="">
+            <img src="https://genshin.honeyhunterworld.com/img/i_411_100.webp?x78105" class="image" alt="">
+            <img src="https://genshin.honeyhunterworld.com/img/i_431_100.webp?x78105" class="image" alt="">
+          </div>
+          <div class="multipleNames">
+            <p class="subtitle">Prosperity (Mon/Thur)<br>Diligence (Tue/Fri)<br>Gold (Wed/Sat)</p>
+          </div>
+        </div>
+        <div class="multipleTalentMats">
+          <div class="travelerMat multipleMats"><img src="https://genshin.honeyhunterworld.com/img/i_463_100.webp?x78105" class="image" alt="">
+            <p class="subtitle">Dvalin's Sigh<br>(Stormterror)</p>
+          </div>
+          <div class="travelerMat multipleMats"><img src="https://genshin.honeyhunterworld.com/img/i_464_100.webp?x78105" class="image" alt="">
+            <p class="subtitle">Tail of Boreas<br>(Andrius Wolf of the North)</p>
+          </div>
+        </div>
+      </div>
+      <div id="dendroTravelerImgs" class="imageDiv">
+        <div class="travelerImg">
+          <img src="https://uploadstatic-sea.hoyoverse.com/hk4e/e20200928calculate/character_icon/UI_AvatarIcon_PlayerGirl.png" class="image" alt="">
+          <p class="subtitle">Lumine<br>(Dendro)</p>
+        </div>
+        <div class="travelerImg"><img src="https://uploadstatic-sea.hoyoverse.com/hk4e/e20200928calculate/character_icon/UI_AvatarIcon_PlayerBoy.png" class="image" alt="">
+          <p class="subtitle">Aether<br>(Dendro)</p>
+        </div>
+        <div class="travelerTalent">
+          <div class="multipleBooks"><img src="https://genshin.honeyhunterworld.com/img/i_n104329_100.webp?x78105" class="image" alt="">
+            <img src="https://genshin.honeyhunterworld.com/img/i_n104332_100.webp?x78105" class="image" alt="">
+            <img src="https://genshin.honeyhunterworld.com/img/i_n104335_100.webp?x78105" class="image" alt="">
+          </div>
+          <div class="multipleNames">
+            <p class="subtitle">Admonition (Mon/Thur)<br>Ingenuity (Tue/Fri)<br>Praxis (Wed/Sat)</p>
+          </div>
+        </div>
+        <div class="travelerMat"><img src="https://genshin.honeyhunterworld.com/img/i_483_100.webp?x78105" class="image" alt="">
+          <p class="subtitle">Mudra of the Malefic General<br>(Raiden Shogun)</p>
+        </div>
+  </div>
     </div>
     <br>
     <br>
@@ -296,7 +1329,6 @@
     <br>
     <br>
     <br>
-  
     <div id="ascension">
   
       <div class="column centered ascensionBox">

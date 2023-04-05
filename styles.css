@@ -27,9 +27,6 @@ body {
   font-family: "Catamaran";
   min-width: 480px;
 }
-div {
-  padding-bottom: 12px;
-}
 .selection {
   padding: 6px;
   border-radius: 15px;
@@ -84,7 +81,7 @@ fieldset {
   width: auto;
 }
 .thicker {
-  margin: 0 25%;
+  margin: 0 30%;
 }
 .centered {
   text-align: center;
@@ -184,7 +181,37 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
-
+.imageDiv, .multipleTalentMats {
+  display: flex;
+  justify-content: center;
+}
+.imageDiv {
+  padding-top: 20px;
+}
+.image {
+  min-height: 100px;
+  max-height: 100px;
+  min-width: 100px;
+  max-width: 100px;
+}
+.charImg, .talentImg, .weeklyMatImg, .charAscImg {
+  margin: 0px 6px;
+  width: 18%;
+}
+.multipleBooks {
+  display:block;
+  padding-bottom: 0;
+}
+.multipleMats {
+  width: 50%;
+}
+.subtitle {
+  line-height: 1;
+  text-align: center;
+}
+.inazuma {
+  scale: 90%;
+}
 @media (max-width: 860px) {
   .column {
     width: 100%;
@@ -200,5 +227,8 @@ input:checked + .slider:before {
   }
   .middle, .third {
     margin: auto;
+  }
+  .thicker {
+  margin: 0 35%;
   }
 }
