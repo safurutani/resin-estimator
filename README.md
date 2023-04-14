@@ -21,7 +21,7 @@ After pressing the Calculate Resin button:
 ![image](https://user-images.githubusercontent.com/98846420/229326298-14b50085-3890-4d49-868b-c570443e62a7.png)
 
 # Plan to update
-As I learn react and jQuery I would like to update the code to utilize those components rather than just pure javascript
+I would like to update the code to utilize jQuery and react components rather than just pure javascript
 
 # Note
 This is a personal project so it is tailored to world level 8 drop rates. 
