@@ -27,3 +27,6 @@ I would like to update the code to utilize jQuery and react components rather th
 This is a personal project so it is tailored to world level 8 drop rates. 
 Character Leveling assumes you did not ascend at the current level and will not be ascending at the desired level if those inputs are exactly on ascension levels.
 The traveler talent books vary so the number of each tier (green, blue, purple) of books is the same but they will not all be the same type. 
+
+# View Project On CodePen
+https://codepen.io/safurutani/pen/oNPQGWw
