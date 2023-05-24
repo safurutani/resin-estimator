@@ -177,11 +177,11 @@ function resinForTalents(talentLevels, booksInventory, xinqiuBonus, condensed) {
     }
   }
 
-  weeklyBossRuns.min = Math.ceil(weeklyBossRuns.weeklyBossMatsNeeded / 2);
-  weeklyBossRuns.minResinNeeded = weeklyBossRuns.min * 30;
-
-  weeklyBossRuns.max = Math.ceil(weeklyBossRuns.weeklyBossMatsNeeded / 3);
+  weeklyBossRuns.max = Math.ceil(weeklyBossRuns.weeklyBossMatsNeeded / 2);
   weeklyBossRuns.maxResinNeeded = weeklyBossRuns.max * 30;
+
+  weeklyBossRuns.min = Math.ceil(weeklyBossRuns.weeklyBossMatsNeeded / 3);
+  weeklyBossRuns.minResinNeeded = weeklyBossRuns.min * 30;
 
   weeklyBossRuns.avg = Math.ceil(weeklyBossRuns.weeklyBossMatsNeeded / 2.4);
   weeklyBossRuns.avgResinNeeded = weeklyBossRuns.avg * 30;
